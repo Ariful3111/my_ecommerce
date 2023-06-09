@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import 'package:get/get.dart';
 import 'package:my_ecommerce/controller/dashboard_controller.dart';
+import 'package:my_ecommerce/view/home/home_screen.dart';
 
 class DashBoardScreen extends StatelessWidget {
   const DashBoardScreen({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class DashBoardScreen extends StatelessWidget {
           child: IndexedStack(
             index: controller.tabIndex,
             children: [
-              Container(),
+             const HomeScreen(),
               Container(
                 decoration: BoxDecoration(
                     color: Colors.red
