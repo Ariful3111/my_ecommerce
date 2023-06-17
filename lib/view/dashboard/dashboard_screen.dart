@@ -10,39 +10,33 @@ class DashBoardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<DashboardController>(
-      builder: (controller)=>Scaffold(
+      builder: (controller) => Scaffold(
         body: SafeArea(
           child: IndexedStack(
             index: controller.tabIndex,
             children: [
-             const HomeScreen(),
+              const HomeScreen(),
               Container(
-                decoration: BoxDecoration(
-                    color: Colors.red
-                ),
+                decoration: BoxDecoration(color: Colors.red),
               ),
               Container(
-                decoration: BoxDecoration(
-                    color: Colors.blue
-                ),
+                decoration: BoxDecoration(color: Colors.blue),
               ),
               Container(
-                decoration: BoxDecoration(
-                    color: Colors.orange
-                ),
+                decoration: BoxDecoration(color: Colors.orange),
               ),
             ],
           ),
         ),
         bottomNavigationBar: Container(
           decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border(
-                  top: BorderSide(
-                    color: Theme.of(context).colorScheme.secondary,
-                    width: 0.7,
-                  ),
+            color: Colors.white,
+            border: Border(
+              top: BorderSide(
+                color: Theme.of(context).colorScheme.secondary,
+                width: 0.7,
               ),
+            ),
           ),
           child: SnakeNavigationBar.color(
             behaviour: SnakeBarBehaviour.floating,
@@ -53,20 +47,20 @@ class DashBoardScreen extends StatelessWidget {
             unselectedItemColor: Theme.of(context).colorScheme.secondary,
             showUnselectedLabels: true,
             currentIndex: controller.tabIndex,
-            onTap: (val){
+            onTap: (val) {
               controller.updateIndex(val);
             },
             items: [
-              BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Home'),
-              BottomNavigationBarItem(icon: Icon(Icons.category),label: 'Category'),
-              BottomNavigationBarItem(icon: Icon(Icons.menu),label: 'Menu'),
-              BottomNavigationBarItem(icon: Icon(Icons.account_circle),label: 'Account'),
-
+              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.category), label: 'Category'),
+              BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.account_circle), label: 'Account'),
             ],
           ),
         ),
       ),
-
     );
   }
 }
